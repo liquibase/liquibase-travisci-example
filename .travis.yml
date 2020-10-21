@@ -8,7 +8,7 @@ env:
         - CHANGELOGFILE='example/samplechangelog.h2.sql'
         - USERNAME='liquibase'
         - PASSWORD='password'
-        - URL='jdbc:h2:file:./example/h2tutorial'
+        - URL='jdbc:h2:file:example/h2tutorial'
 before_install:
     - docker pull liquibase/liquibase:4.1
 script:
