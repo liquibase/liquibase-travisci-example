@@ -2,7 +2,13 @@ language: java
 os: linux
 services:
     - docker
+env:
+    - OPERATION='update'
+    - CHANGELOGFILE='example/samplechangelog.h2.sql'
+    - USERNAME='liquibase'
+    - PASSWORD='password'
+    - URL='jdbc:h2:file:./example/h2tutorial'
 before_install:
-    - docker pull liquibase/liquibase:4.1.x
+    - docker pull liquibase/liquibase:4.1
 script:
-    - docker images
+    - docker run --rm -v $(pwd):. liquibase/liquibase:4.1.x --url=$URL --changeLogFile=$CHANGELOGFILE --username=$USERNAME --password=$PASSWORD update
