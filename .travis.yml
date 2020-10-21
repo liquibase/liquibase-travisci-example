@@ -6,10 +6,13 @@ env:
     global:
         - OPERATION='update'
         - CHANGELOGFILE='example/samplechangelog.h2.sql'
+        # The below variables are in clear text for the example
+        # In production these should be stored as encrypted variables or repository variables
+        # https://docs.travis-ci.com/user/environment-variables/
         - USERNAME='liquibase'
         - PASSWORD='password'
         - URL='jdbc:h2:file:./example/h2tutorial'
 before_install:
     - docker pull liquibase/liquibase:4.1
 script:
-    - docker run --rm -v $(pwd):$(pwd) liquibase/liquibase:4.1 --classpath=$(pwd) --url=$URL --changeLogFile=$CHANGELOGFILE --username=$USERNAME --password=$PASSWORD update
+    - docker run --rm -v $(pwd):$(pwd) liquibase/liquibase:4.1 --classpath=$(pwd) --url=$URL --changeLogFile=$CHANGELOGFILE --username=$USERNAME --password=$PASSWORD $OPERATION
