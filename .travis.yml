@@ -15,4 +15,4 @@ env:
 before_install:
     - docker pull liquibase/liquibase:4.1
 script:
-    - docker run --rm -v $(pwd):$(pwd) liquibase/liquibase:4.1 --classpath=$(pwd)/example --url=$URL --changeLogFile=$CHANGELOGFILE --username=$USERNAME --password=$PASSWORD $OPERATION
+    - docker run --rm -v $(pwd):$(pwd) liquibase/liquibase:4.1 --classpath=$(pwd)/changelogs --url=$URL --changeLogFile=$CHANGELOGFILE --username=$USERNAME --password=$PASSWORD $OPERATION
