@@ -4,3 +4,5 @@ services:
     - docker
 before_install:
     - docker pull liquibase/liquibase:4.1.x
+script:
+    - docker images
