@@ -5,11 +5,11 @@ services:
 env:
     global:
         - OPERATION='update'
-        - CHANGELOGFILE='./example/samplechangelog.h2.sql'
+        - CHANGELOGFILE='example/samplechangelog.h2.sql'
         - USERNAME='liquibase'
         - PASSWORD='password'
         - URL='jdbc:h2:file:./example/h2tutorial'
 before_install:
     - docker pull liquibase/liquibase:4.1
 script:
-    - docker run --rm -v $(pwd):$(pwd) liquibase/liquibase:4.1 --url=$URL --changeLogFile=$CHANGELOGFILE --username=$USERNAME --password=$PASSWORD update
+    - docker run --rm -v $(pwd):$(pwd) liquibase/liquibase:4.1 --classpath=$(pwd) --url=$URL --changeLogFile=$CHANGELOGFILE --username=$USERNAME --password=$PASSWORD update
