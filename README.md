@@ -19,4 +19,4 @@ This file is required for Travis CI to run your pipeline.  Our example is broken
 * script: - the docker run command we use to run liquibase against our changeset.
 
 ## testing
-Make a pull request against this repository with your desired operation, changeLogFile, database username, database password, and database jdbc url.
+Fork this repository and update with your desired operation, changeLogFile, database username, database password, and database jdbc url.
