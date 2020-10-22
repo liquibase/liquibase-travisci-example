@@ -40,7 +40,7 @@ CREATE TABLE yourname (
 > git add example/changelogs/samplechangelog.h2.sql
 > git commit -m "yourname: Adding new changeset for example"
 > git push origin <your_branch_name>
-5. Your commit triggers a build in CircleCI and executes Liquibase update!
+5. Your commit triggers a build in TravisCI and executes Liquibase update!
 
 If you want to try with your own changelog and database, you can make a pull request against this repository with your desired operation, changeLogFile, database username, database password, and database jdbc url.
 
