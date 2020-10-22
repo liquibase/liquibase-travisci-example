@@ -22,6 +22,7 @@ This file is required for Travis CI to run your pipeline.  Our example is broken
 
 1. Fork and clone the liquibase-travisci-example repository.
 > Fork by clicking the "Fork" button at the top right of the liquibase-travisci-example page.
+
 > git clone git@github.com:<YOURFORK>/liquibase/liquibase-travisci-example.git
 2. Create a new git branch for your changes.
 > git checkout -b <your_branch_name>
